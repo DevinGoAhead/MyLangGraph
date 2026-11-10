@@ -1,0 +1,4 @@
+tools(tags=None, recurse=True, explode_args=False, func_accepts={'config': ('N/A', <class 'inspect._empty'>), 'runtime': ('N/A', <class 'inspect._empty'>)
+}, _tools_by_name={'get_weather': StructuredTool(name='get_weather', description='Call to get the current weather.', args_schema=<class 'langchain_core.utils.pydantic.get_weather'>, func=<function get_weather at 0x7e101fb4f7e0>)
+}, _injected_args={'get_weather': _InjectedArgs(state={}, store=None, runtime=None, all_injected_keys=set(), _optional_state_args=set())
+}, _handle_tool_errors=<function _default_handle_tool_errors at 0x7e101e793a60>, _messages_key='messages', _wrap_tool_call=None, _awrap_tool_call=None)
