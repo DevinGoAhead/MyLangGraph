@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 836.5765000000002 470" width="836.5765000000002" height="470" style="--bg:#18181B;--fg:#F4F4F5;--line:#71717A;--muted:#A1A1AA;--surface:#27272A;--border:#3F3F46;background:var(--bg)">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap');
+  text { font-family: 'Inter', system-ui, sans-serif; }
+  svg {
+    /* Derived from --bg and --fg (overridable via --line, --accent, etc.) */
+    --_text:          var(--fg);
+    --_text-sec:      var(--muted, color-mix(in srgb, var(--fg) 60%, var(--bg)));
+    --_text-muted:    var(--muted, color-mix(in srgb, var(--fg) 40%, var(--bg)));
+    --_text-faint:    color-mix(in srgb, var(--fg) 25%, var(--bg));
+    --_line:          var(--line, color-mix(in srgb, var(--fg) 50%, var(--bg)));
+    --_arrow:         var(--accent, color-mix(in srgb, var(--fg) 85%, var(--bg)));
+    --_node-fill:     var(--surface, color-mix(in srgb, var(--fg) 3%, var(--bg)));
+    --_node-stroke:   var(--border, color-mix(in srgb, var(--fg) 20%, var(--bg)));
+    --_group-fill:    var(--bg);
+    --_group-hdr:     color-mix(in srgb, var(--fg) 5%, var(--bg));
+    --_inner-stroke:  color-mix(in srgb, var(--fg) 12%, var(--bg));
+    --_key-badge:     color-mix(in srgb, var(--fg) 10%, var(--bg));
+  }
+</style>
+<defs>
+  <marker id="seq-arrow" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polygon points="0 0, 8 2.5, 0 5" fill="var(--_arrow)" />
+  </marker>
+  <marker id="seq-arrow-open" markerWidth="8" markerHeight="5" refX="8" refY="2.5" orient="auto-start-reverse">
+    <polyline points="0 0, 8 2.5, 0 5" fill="none" stroke="var(--_arrow)" stroke-width="1" />
+  </marker>
+</defs>
+<line class="lifeline" data-actor="Loop" x1="137.377" y1="70" x2="137.377" y2="440" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="A" x1="382.05500000000006" y1="70" x2="382.05500000000006" y2="440" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="B" x1="537.5150000000001" y1="70" x2="537.5150000000001" y2="440" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<line class="lifeline" data-actor="API" x1="744.7710000000002" y1="70" x2="744.7710000000002" y2="440" stroke="var(--_line)" stroke-width="0.75" stroke-dasharray="6 4" />
+<g class="message" data-from="Loop" data-to="A" data-label="开始执行 call_model_A" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="137.377" y1="90" x2="382.05500000000006" y2="90" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="193.716" y="71.85" width="132" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="259.716" y="80" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">开始执行 call_model_A</text>
+</g>
+<g class="message" data-from="A" data-to="API" data-label="发出请求 A (预计耗时 3s)" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="382.05500000000006" y1="130" x2="744.7710000000002" y2="130" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="490.4130000000001" y="111.85" width="146" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="563.4130000000001" y="120" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">发出请求 A (预计耗时 3s)</text>
+</g>
+<g class="message" data-from="A" data-to="Loop" data-label="遇到 await：我自己先挂起，CPU 让给你！" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="382.05500000000006" y1="170" x2="137.377" y2="170" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="137.216" y="151.85" width="245" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="259.716" y="160" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">遇到 await：我自己先挂起，CPU 让给你！</text>
+</g>
+<g class="message" data-from="Loop" data-to="B" data-label="开始执行 call_model_B" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="137.377" y1="225" x2="537.5150000000001" y2="225" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="271.446" y="206.85" width="132" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="337.446" y="215" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">开始执行 call_model_B</text>
+</g>
+<g class="message" data-from="B" data-to="API" data-label="发出请求 B (预计耗时 3s)" data-line-style="solid" data-arrow-head="filled" data-self="false">
+  <line x1="537.5150000000001" y1="265" x2="744.7710000000002" y2="265" stroke="var(--_line)" stroke-width="1" marker-end="url(#seq-arrow)" />
+  <rect x="568.1430000000001" y="246.85" width="146" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="641.1430000000001" y="255" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">发出请求 B (预计耗时 3s)</text>
+</g>
+<g class="message" data-from="B" data-to="Loop" data-label="遇到 await：我也先挂起等待！" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="537.5150000000001" y1="305" x2="137.377" y2="305" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="247.44600000000003" y="286.85" width="180" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="337.446" y="295" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">遇到 await：我也先挂起等待！</text>
+</g>
+<g class="message" data-from="API" data-to="A" data-label="收到结果 A (唤醒 A 继续往下 return)" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="744.7710000000002" y1="360" x2="382.05500000000006" y2="360" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="461.4130000000001" y="341.85" width="204" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="563.4130000000001" y="350" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">收到结果 A (唤醒 A 继续往下 return)</text>
+</g>
+<g class="message" data-from="API" data-to="B" data-label="收到结果 B (唤醒 B 继续往下 return)" data-line-style="dashed" data-arrow-head="filled" data-self="false">
+  <line x1="744.7710000000002" y1="400" x2="537.5150000000001" y2="400" stroke="var(--_line)" stroke-width="1" stroke-dasharray="6 4" marker-end="url(#seq-arrow)" />
+  <rect x="539.1430000000001" y="381.85" width="204" height="16.3" rx="2" ry="2" fill="var(--bg)" />
+  <text x="641.1430000000001" y="390" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">收到结果 B (唤醒 B 继续往下 return)</text>
+</g>
+<g class="note" data-position="over" data-actors="Loop,B">
+  <polygon points="215.02800000000002,178 453.86400000000003,178 459.86400000000003,184 459.86400000000003,201 215.02800000000002,201" fill="var(--bg)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <polygon points="453.86400000000003,178 459.86400000000003,184 453.86400000000003,184" fill="var(--_inner-stroke)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="337.446" y="189.5" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">第 0.01 秒：线程完全没卡死，立刻切去跑 B</text>
+</g>
+<g class="note" data-position="over" data-actors="Loop,API">
+  <polygon points="289.8470000000001,313 586.301,313 592.301,319 592.301,336 289.8470000000001,336" fill="var(--bg)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <polygon points="586.301,313 592.301,319 586.301,319" fill="var(--_inner-stroke)" stroke="var(--_node-stroke)" stroke-width="0.75" />
+  <text x="441.07400000000007" y="324.5" font-size="11" text-anchor="middle" font-weight="400" fill="var(--_text-muted)" dy="3.8499999999999996">第 3.0 秒：两个网络回包先后到达，总耗时仅约 3 秒！</text>
+</g>
+<g class="actor" data-id="Loop" data-label="Event Loop (单线程事件循环)" data-type="participant">
+  <rect x="30.000000000000014" y="30" width="214.754" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="137.377" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">Event Loop (单线程事件循环)</text>
+</g>
+<g class="actor" data-id="A" data-label="节点A / 用户1" data-type="participant">
+  <rect x="325.4365000000001" y="30" width="113.23700000000001" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="382.05500000000006" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">节点A / 用户1</text>
+</g>
+<g class="actor" data-id="B" data-label="节点B / 用户2" data-type="participant">
+  <rect x="478.6735000000001" y="30" width="117.68299999999999" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="537.5150000000001" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">节点B / 用户2</text>
+</g>
+<g class="actor" data-id="API" data-label="OpenAI 服务器" data-type="participant">
+  <rect x="682.9655000000001" y="30" width="123.611" height="40" rx="4" ry="4" fill="var(--_node-fill)" stroke="var(--_node-stroke)" stroke-width="1" />
+  <text x="744.7710000000002" y="50" font-size="13" text-anchor="middle" font-weight="500" fill="var(--_text)" dy="4.55">OpenAI 服务器</text>
+</g>
+</svg>
